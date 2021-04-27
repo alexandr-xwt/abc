@@ -13,4 +13,6 @@ $p = mb_strrpos($s, ' ', 'UTF-8');
 $s = mb_substr($s, 0, $p, 'UTF-8'); 
 $p = mb_strrpos($s, ' ', 'UTF-8'); 
 $s = mb_substr($s, 0, $p, 'UTF-8'); 
-echo $s;
+// word word ...
+$c = mb_substr($b,$p,183,'UTF-8');
+echo $c;
