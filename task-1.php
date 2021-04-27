@@ -4,6 +4,13 @@ $a = 'Группа инженеров из Национального центр
 $link = 'https://radiovesti.ru/brand/60950/episode/2530336/';
 // 180 symb
 $b = mb_substr($a,0,180,'UTF-8');
-// ...
+// add ...
 $b = $b . '...';
-echo $b;
+// mb_substr, mb_strrpos
+$p = mb_strrpos($b, ' ', 'UTF-8'); 
+$s = mb_substr($b, 0, $p, 'UTF-8'); 
+$p = mb_strrpos($s, ' ', 'UTF-8'); 
+$s = mb_substr($s, 0, $p, 'UTF-8'); 
+$p = mb_strrpos($s, ' ', 'UTF-8'); 
+$s = mb_substr($s, 0, $p, 'UTF-8'); 
+echo $s;
