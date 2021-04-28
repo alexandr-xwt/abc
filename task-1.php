@@ -7,16 +7,16 @@ $b = mb_substr($a,0,180,'UTF-8');
 // add ...
 $b = $b . '...';
 // delete: word word ...
-$space_position = mb_strrpos($b, ' ', 'UTF-8'); 
-$text__crop_to_space_position = mb_substr($b, 0, $space_position, 'UTF-8'); 
-$space_position = mb_strrpos($text__crop_to_space_position, ' ', 'UTF-8'); 
-$text__crop_to_space_position = mb_substr($text__crop_to_space_position, 0, $space_position, 'UTF-8'); 
-$space_position = mb_strrpos($text__crop_to_space_position, ' ', 'UTF-8'); 
-$text__crop_to_space_position = mb_substr($text__crop_to_space_position, 0, $space_position, 'UTF-8'); 
+$spacePosition = mb_strrpos($b, ' ', 'UTF-8'); 
+$textCropToSpacePosition = mb_substr($b, 0, $spacePosition, 'UTF-8'); 
+$spacePosition = mb_strrpos($textCropToSpacePosition, ' ', 'UTF-8'); 
+$textCropToSpacePosition = mb_substr($textCropToSpacePosition, 0, $spacePosition, 'UTF-8'); 
+$spacePosition = mb_strrpos($textCropToSpacePosition, ' ', 'UTF-8'); 
+$textCropToSpacePosition = mb_substr($textCropToSpacePosition, 0, $spacePosition, 'UTF-8'); 
 // show: word word ...
-$text__link__words = mb_substr($b,$space_position,183,'UTF-8');
+$textLinkWords = mb_substr($b,$spacePosition,183,'UTF-8');
 // create link
-$text__link = "<a href=$link>$text__link__words</a>";
+$textLink = "<a href=$link>$textLinkWords</a>";
 // 
-$text = $text__crop_to_space_position . $text__link;
+$text = $textCropToSpacePosition . $textLink;
 echo $text;
