@@ -4,6 +4,8 @@ $a = 'Группа инженеров из Национального центр
 $link = 'https://radiovesti.ru/brand/60950/episode/2530336/';
 // crop to 180 symb
 $b = mb_substr($a,0,180,'UTF-8');
+// trim !,.-
+$b = rtrim($b, "!,.-");
 // add ...
 $b = strip_tags($b) . ' ...';
 // delete: word word ...
