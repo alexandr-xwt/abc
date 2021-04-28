@@ -5,7 +5,7 @@ $link = 'https://radiovesti.ru/brand/60950/episode/2530336/';
 // crop to 180 symb
 $b = mb_substr($a,0,180,'UTF-8');
 // add ...
-$b = $b . '...';
+$b = strip_tags($b) . ' ...';
 // delete: word word ...
 $spacePosition = mb_strrpos($b, ' ', 'UTF-8'); 
 $textCropToSpacePosition = mb_substr($b, 0, $spacePosition, 'UTF-8'); 
