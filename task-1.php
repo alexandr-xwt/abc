@@ -9,12 +9,12 @@ $b = $b . '...';
 // delete: word word ...
 $space_position = mb_strrpos($b, ' ', 'UTF-8'); 
 $crop_to_space_position = mb_substr($b, 0, $space_position, 'UTF-8'); 
-$space_position = mb_strrpos($s, ' ', 'UTF-8'); 
-$crop_to_space_position = mb_substr($s, 0, $space_position, 'UTF-8'); 
-$space_position = mb_strrpos($s, ' ', 'UTF-8'); 
-$crop_to_space_position = mb_substr($s, 0, $space_position, 'UTF-8'); 
+$space_position = mb_strrpos($crop_to_space_position, ' ', 'UTF-8'); 
+$crop_to_space_position = mb_substr($crop_to_space_position, 0, $space_position, 'UTF-8'); 
+$space_position = mb_strrpos($crop_to_space_position, ' ', 'UTF-8'); 
+$crop_to_space_position = mb_substr($crop_to_space_position, 0, $space_position, 'UTF-8'); 
 // show: word word ...
 $text__link__words = mb_substr($b,$space_position,183,'UTF-8');
 // create link
-$text__link = "<a href=\"$link\">$text__link__words</a>";
+$text__link = "<a href=$link>$text__link__words</a>";
 echo $text__link;
