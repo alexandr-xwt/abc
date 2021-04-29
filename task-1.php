@@ -11,23 +11,23 @@ $a = 'Группа инженеров из Национального центр
 получился очень эффективным: напряжения всего в 5 вольт хватало, чтобы
 поверхность образца нагрелась с комнатной температуры до 41°C.';
 $link = 'https://radiovesti.ru/brand/60950/episode/2530336/';
-// crop to 180 symb
+// обрезаем текст до 180 символов
 $b = mb_substr($a, 0, 180, 'UTF-8');
-// trim !,.-
+// удаляем на конце знаки !,.-
 $b = rtrim($b, "!,.- ");
-// add ...
+// дописываем ' ...'
 $b = $b . ' ...';
-// delete: word word ...
+// удаляем последние три слова
 $spacePosition = mb_strrpos($b, ' ', 'UTF-8');
 $textCropToSpacePosition = mb_substr($b, 0, $spacePosition, 'UTF-8');
 $spacePosition = mb_strrpos($textCropToSpacePosition, ' ', 'UTF-8');
 $textCropToSpacePosition = mb_substr($textCropToSpacePosition, 0, $spacePosition, 'UTF-8');
 $spacePosition = mb_strrpos($textCropToSpacePosition, ' ', 'UTF-8');
 $textCropToSpacePosition = mb_substr($textCropToSpacePosition, 0, $spacePosition, 'UTF-8');
-// show: word word ...
+// запоминаем последние три слова
 $textLinkWords = mb_substr($b, $spacePosition, 183, 'UTF-8');
-// create link
+// сосздание ссылки
 $textLink = "<a href=$link>$textLinkWords</a>";
-//
+// вывод новости
 $text = $textCropToSpacePosition . $textLink;
 echo $text;
