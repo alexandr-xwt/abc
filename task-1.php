@@ -29,5 +29,5 @@ $textLinkWords = mb_substr($b, $spacePosition, 183, 'UTF-8');
 // сосздание ссылки
 $textLink = "<a href=$link>$textLinkWords</a>";
 // вывод новости
-$text = $textCropToSpacePosition . $textLink;
-echo $text;
+$b = $textCropToSpacePosition . $textLink;
+echo $b;
