@@ -1,30 +1,22 @@
 <?php
 
 header('Content-type: image/png');
-
-$w_sour = 800;
-$h_sour = 800;
-$w_dest = 200;
-$h_dest = 100;
-
+$wSour = 800;
+$hSour = 800;
+$wDest = 200;
+$hDest = 100;
 // Создание изображений
-$im_sour = imagecreate($w_sour, $h_sour);
-$im_dest = imagecreatetruecolor($w_dest, $h_dest);
-
+$imSour = imagecreate($wSour, $hSour);
+$imDest = imagecreatetruecolor($wDest, $hDest);
 // Серый фон
-$im_sour_bg = imagecolorallocate($im_sour, 160, 160, 160);
-
+$imSourBg = imagecolorallocate($imSour, 160, 160, 160);
 // palette to true color
-imagepalettetotruecolor($im_sour);
-
+imagepalettetotruecolor($imSour);
 // Изменение размеров
-imagecopyresampled($im_dest, $im_sour, 0, 0, 0, 0, $w_dest, $h_dest, $w_sour, $h_sour);
-
+imagecopyresampled($imDest, $imSour, 0, 0, 0, 0, $wDest, $hDest, $wSour, $hSour);
 // true color to palette
-imagetruecolortopalette($im_dest, false, 255);
-
+imagetruecolortopalette($imDest, false, 255);
 // Вывод изображения на экран
-imagepng($im_dest);
-
+imagepng($imDest);
 // Освобождение памяти
-imagedestroy($im_sour, $im_dest);
+imagedestroy($imSour, $imDest);
