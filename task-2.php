@@ -18,8 +18,10 @@ $im_sour_bg = imagecolorallocate($im_sour, 160, 160, 160);
 imagepalettetotruecolor($im_sour);
 
 // Изменение размеров
-// imagecopyresampled($im_dest, $im_sour, 0, 0, 0, 0, $w_dest, $h_dest, $w_sour, $h_sour);
+imagecopyresampled($im_dest, $im_sour, 0, 0, 0, 0, $w_dest, $h_dest, $w_sour, $h_sour);
+
 // Вывод изображения на экран
-imagejpeg($im_sour);
+imagejpeg($im_dest);
+
 // Освобождение памяти
-imagedestroy($im_sour, $im_dest, $im_sour_tmp);
+imagedestroy($im_sour, $im_dest);
